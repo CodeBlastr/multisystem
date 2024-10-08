@@ -1,7 +1,7 @@
 |pythonapp|
 
 #####################
-django CMS quickstart
+Multi System (Django)
 #####################
 
 - A dockerised django CMS project intended to be run locally in Docker on your own machine or on a Docker-based cloud, such as `Divio <https://www.divio.com/>`_ 
