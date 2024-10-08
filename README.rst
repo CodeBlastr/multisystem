@@ -21,7 +21,7 @@ You need to have Docker installed on your system to run this project.
 - If you have not used docker in the past, please read this
   `introduction on docker <https://docs.docker.com/get-started/>`_  here.
 
-Local Setup
+Initial Local Setup (aka. clean data)
 ===========
 
 .. inclusion-marker-do-not-remove
@@ -52,8 +52,8 @@ and start the server again:
   docker compose up -d
 
 
-Note: Since Compose V2, ``docker-compose`` is now included inside docker. For more information, checkout the
-`Compose V2 <https://docs.docker.com/compose/cli-command/>`_ Documentation.
+#Note: Since Compose V2, ``docker-compose`` is now included inside docker. For more information, checkout the
+#`Compose V2 <https://docs.docker.com/compose/cli-command/>`_ Documentation.
 
 .. inclusion-end-marker-do-not-remove
 
