@@ -28,8 +28,8 @@ Initial Local Setup (aka. clean data)
 
 .. code-block:: bash
 
-  git clone git@github.com:django-cms/django-cms-quickstart.git
-  cd django-cms-quickstart
+  git clone git@github.com:CodeBlastr/multisystem.git
+  cd multisystem
   docker compose build web
   docker compose up -d database_default
   docker compose run --rm web python manage.py migrate
