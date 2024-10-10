@@ -91,6 +91,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
 
+    'django:django.middleware.locale.LocaleMiddleware',
+    'cms.middleware.utils.ApphookReloadMiddleware',
+
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
@@ -221,7 +224,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = '/data/media/'
 
 
-SITE_ID = 1
+SITE_ID = 2
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
