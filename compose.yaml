@@ -21,7 +21,7 @@ services:
     # Select one of the following db configurations for the database
     image: postgres:15-alpine
     ports:
-      - "${DB_PORT-}:5432/tcp"  # allow your local dev env to connect to the db if variable set
+      - "${DB_PORT:-5432}:5432/tcp"  # allow your local dev env to connect to the db if variable set
     environment:
       POSTGRES_DB: "db"
       POSTGRES_PASSWORD: "password"
@@ -33,6 +33,16 @@ services:
 
     volumes:
        - postgres-data:/var/lib/postgresql/data/
+
+  frontend:
+    # Build the React app from the Dockerfile in the frontend directory
+    build: ./frontend
+    ports:
+      - "3000:80"  # Map React's internal port to 3000 on the host
+    networks:
+      - djangocmsnet
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 networks:
   djangocmsnet:
