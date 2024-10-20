@@ -91,7 +91,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
 
-    'django:django.middleware.locale.LocaleMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
 
     'cms.middleware.user.CurrentUserMiddleware',
