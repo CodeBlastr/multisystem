@@ -78,6 +78,9 @@ INSTALLED_APPS = [
     'djangocms_frontend.contrib.image',
     'djangocms_frontend.contrib.tabs',
     'djangocms_frontend.contrib.utilities',
+
+    # Added Debug Toolbar
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +101,9 @@ MIDDLEWARE = [
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
+
+    # Added Debug Toolbar Middleware
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -120,7 +126,6 @@ TEMPLATES = [
 
                 'cms.context_processors.cms_settings',
                 'sekizai.context_processors.sekizai',
-
             ],
         },
     },
@@ -224,9 +229,16 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = '/data/media/'
 
 
-SITE_ID = 2
+SITE_ID = 6
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CMS_CONFIRM_VERSION4 = True
 DJANGOCMS_VERSIONING_ALLOW_DELETING_VERSIONS = True
+
+
+# Debug Toolbar Configuration
+if DEBUG:
+    INTERNAL_IPS = [
+        '127.0.0.1',
+    ]

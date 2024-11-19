@@ -33,16 +33,18 @@ services:
 
     volumes:
        - postgres-data:/var/lib/postgresql/data/
-
+       
   frontend:
-    # Build the React app from the Dockerfile in the frontend directory
     build: ./frontend
     ports:
-      - "3000:80"  # Map React's internal port to 3000 on the host
+      - "3000:3000"  # Correctly map React's development server port
+    volumes:
+      - ./frontend:/app
     networks:
       - djangocmsnet
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_USEPOLLING=true  # Correct environment variable for file watching
+
 
 networks:
   djangocmsnet:
