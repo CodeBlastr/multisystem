@@ -1,53 +1,44 @@
 services:
   web:
-    # the application's web service (container) will use an image based on our Dockerfile
+    # The Django web service
     build: .
-    # map the internal port 80 to port 8000 on the host
     ports:
-      - "8000:80"
-    # map the host directory to app (which allows us to see and edit files inside the container)
+      - "8000:80"  # Map Django's internal port 80 to 8000 on the host
     volumes:
       - ".:/app:rw"
       - "./data:/data:rw"
-    # the default command to run whenever the container is launched
     command: python manage.py runserver 0.0.0.0:80
-    # the URL 'postgres' or 'mysql' will point to the application's db service
     networks:
       - djangocmsnet
-
     env_file: .env-local
 
   database_default:
-    # Select one of the following db configurations for the database
+    # PostgreSQL database service
     image: postgres:15-alpine
     ports:
-      - "${DB_PORT:-5432}:5432/tcp"  # allow your local dev env to connect to the db if variable set
+      - "${DB_PORT:-5432}:5432/tcp"  # Map the database port
     environment:
       POSTGRES_DB: "db"
       POSTGRES_PASSWORD: "password"
       POSTGRES_HOST_AUTH_METHOD: "trust"
       SERVICE_MANAGER: "fsm-postgres"
-
     networks:
       - djangocmsnet
-
     volumes:
-       - postgres-data:/var/lib/postgresql/data/
-       
+      - postgres-data:/var/lib/postgresql/data/
+
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"  # Correctly map React's development server port
-    volumes:
-      - ./frontend:/app
+      - "3000:3000"  # Map Next.js development server to port 3000
     networks:
-      - djangocmsnet
+      - djangocmsnet  # Connect to the shared network
     environment:
-      - CHOKIDAR_USEPOLLING=true  # Correct environment variable for file watching
-
+      - CHOKIDAR_USEPOLLING=true  # Required for file changes in Docker
+      - HOST=0.0.0.0  # Bind Next.js to all interfaces
 
 networks:
-  djangocmsnet:
+  djangocmsnet:  # Define the shared network
 
 volumes:
-  postgres-data:
+  postgres-data:  # Define the volume for the database

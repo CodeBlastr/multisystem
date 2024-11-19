@@ -1,22 +1,23 @@
-# Use Node.js base image for development
-FROM node:18-alpine
+# Use Node.js LTS as the base image
+FROM node:16-alpine
 
+# Set the working directory
 WORKDIR /app
 
-# Copy only the package files for dependency installation
-COPY package.json yarn.lock ./
+# Copy package.json and yarn.lock first
+COPY package.json ./
 
 # Install dependencies
 RUN yarn install
 
-# Copy the rest of the app's source code
+# Add node_modules/.bin to PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Copy the rest of the application
 COPY . .
 
-# Expose the port used by the React development server
+# Expose the development server port
 EXPOSE 3000
 
-# Set polling for file changes (useful in Docker)
-ENV CHOKIDAR_USEPOLLING=true
-
-# Run the React development server
-CMD ["yarn", "start"]
+# Use development mode by default
+CMD ["sh", "-c", "yarn dev"]

@@ -1,13 +1,8 @@
 |pythonapp|
 
 #####################
-Multi System (Django)
+Multi System (RazorIT)
 #####################
-
-- A dockerised django CMS project intended to be run locally in Docker on your own machine or on a Docker-based cloud, such as `Divio <https://www.divio.com/>`_ 
-- This version uses Python 3.11 and the most up-to-date versions of Django 4.2, and django CMS 4.1.0
-- This project is endorsed by the `django CMS Association <https://www.django-cms.org/en/about-us/>`_. That means that it is officially accepted by the dCA as being in line with our roadmap vision and development/plugin policy. Join us on `Slack <https://www.django-cms.org/slack/>`_ for more information or questions.
-- The documentation for  django CMS can be found here: https://docs.django-cms.org/
 
 Installation
 ############
