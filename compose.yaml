@@ -4,13 +4,13 @@ services:
     build: .
     ports:
       - "8000:80"  # Map Django's internal port 80 to 8000 on the host
-    volumes:
-      - ".:/app:rw"
-      - "./data:/data:rw"
     command: python manage.py runserver 0.0.0.0:80
     networks:
       - djangocmsnet
     env_file: .env-local
+    # Optional: If you need to re-enable volumes for development, limit the scope
+    # volumes:
+    #   - ./backend:/app
 
   database_default:
     # PostgreSQL database service
@@ -31,6 +31,13 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"  # Map Next.js development server to port 3000
+    volumes:
+      - ./frontend/components:/app/components
+      - ./frontend/pages:/app/pages
+      - ./frontend/public:/app/public
+      - ./frontend/src:/app/src
+      - ./frontend/styles:/app/styles
+      - ./frontend/utils:/app/utils
     networks:
       - djangocmsnet  # Connect to the shared network
     environment:

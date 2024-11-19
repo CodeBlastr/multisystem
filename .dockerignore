@@ -1,2 +1,5 @@
 .git
 node_modules
+.next
+frontend/node_modules
+frontned/.next
