@@ -15,4 +15,4 @@ class DynamicSiteIDMiddleware(MiddlewareMixin):
             settings.SITE_ID = site.id
         except Site.DoesNotExist:
             # Optional: Set a default or raise an error if site not found
-            settings.SITE_ID = 6  # Default SITE_ID, or handle as needed
+            settings.SITE_ID = 8  # Default SITE_ID, or handle as needed

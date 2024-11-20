@@ -229,7 +229,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = '/data/media/'
 
 
-SITE_ID = 7
+SITE_ID = 8
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 

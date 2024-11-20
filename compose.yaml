@@ -38,6 +38,7 @@ services:
       - ./frontend/src:/app/src
       - ./frontend/styles:/app/styles
       - ./frontend/utils:/app/utils
+      - ./frontend/next.config.js:/app/next.config.js
     networks:
       - djangocmsnet  # Connect to the shared network
     environment:
