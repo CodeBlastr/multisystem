@@ -53,7 +53,7 @@ const Footer = () => {
           <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
           <ul className="text-black-500">
             <li className="my-2 hover:text-red-500 cursor-pointer transition-all">
-              LaslesVPN ?{" "}
+              RazorIT ?{" "}
             </li>
             <li className="my-2 hover:text-red-500 cursor-pointer transition-all">
               FAQ{" "}
