@@ -58,16 +58,13 @@ const Pricing = () => {
                 </p>
                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
                   <li className="relative check custom-list my-2">
-                    Unlimited Bandwitch
+                    Business Analysis
                   </li>
                   <li className="relative check custom-list my-2">
-                    Encrypted Connection
+                    Define Problem
                   </li>
                   <li className="relative check custom-list my-2">
-                    No Traffic Logs
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    Works on All Devices
+                    Present Solution
                   </li>
                 </ul>
                 <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
@@ -98,28 +95,28 @@ const Pricing = () => {
                 />
               </div>
               <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Standard Plan{" "}
+                Design Plan{" "}
               </p>
               <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
                 <li className="relative check custom-list my-2">
-                  Unlimited Bandwitch
+                  Business Analysis 
                 </li>
                 <li className="relative check custom-list my-2">
-                  Encrypted Connection
+                  Define Problem
                 </li>
                 <li className="relative check custom-list my-2">
-                  No Traffic Logs
+                  Present Solution
                 </li>
                 <li className="relative check custom-list my-2">
-                  Works on All Devices
+                  Design Visualization
                 </li>
                 <li className="relative check custom-list my-2">
-                  Connect Anyware{" "}
+                  Workflow Presentation{" "}
                 </li>
               </ul>
               <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
                 <p className="text-2xl text-black-600 text-center mb-4 ">
-                  $9 <span className="text-black-500">/ mo</span>
+                  $99
                 </p>
                 <ButtonOutline>Select</ButtonOutline>
               </div>
@@ -149,27 +146,27 @@ const Pricing = () => {
               </p>
               <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
                 <li className="relative check custom-list my-2">
-                  Unlimited Bandwitch
+                  Business Analysis 
                 </li>
                 <li className="relative check custom-list my-2">
-                  Encrypted Connection
+                  Define Problem
                 </li>
                 <li className="relative check custom-list my-2">
-                  No Traffic Logs
+                  Present Solution
                 </li>
                 <li className="relative check custom-list my-2">
-                  Works on All Devices
+                  Design Visualization
                 </li>
                 <li className="relative check custom-list my-2">
-                  Connect Anyware{" "}
+                  Workflow Presentation{" "}
                 </li>
                 <li className="relative check custom-list my-2">
-                  Get New Features{" "}
+                  Build Out Team{" "}
                 </li>
               </ul>
               <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
                 <p className="text-2xl text-black-600 text-center mb-4 ">
-                  $12 <span className="text-black-500">/ mo</span>
+                  $499
                 </p>
 
                 <ButtonOutline>Select</ButtonOutline>
@@ -183,11 +180,10 @@ const Pricing = () => {
             <motion.h3
               variants={scrollAnimation}
               className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black-600 leading-relaxed w-9/12 sm:w-6/12 lg:w-4/12 mx-auto">
-              Huge Global Network of Fast VPN{" "}
+              Helping Companies All Around the World{" "}
             </motion.h3>
             <motion.p className="leading-normal  mx-auto my-2 w-10/12 sm:w-7/12 lg:w-6/12" variants={scrollAnimation}>
-              See RazorIT everywhere to make it easier for you when you move
-              locations.
+              RazorIT is sure to have coverage in your timezone for hands on daily communication that drives your company forward. 
             </motion.p>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper>
