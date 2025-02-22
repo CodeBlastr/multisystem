@@ -1,23 +1,13 @@
-# Use Node.js LTS as the base image
-FROM node:16-alpine
+# Use a lightweight Node.js-based image
+FROM node:18-slim
 
-# Set the working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock first
-COPY package.json ./
+# Copy a simple HTML file to serve
+RUN echo '<!DOCTYPE html><html lang="en"><head><title>Hello Frontend</title></head><body><h1>Hello from Frontend!</h1></body></html>' > /app/index.html
 
-# Install dependencies
-RUN yarn install
+# Install a lightweight HTTP server
+RUN npm install -g serve
 
-# Add node_modules/.bin to PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# Copy the rest of the application
-COPY . .
-
-# Expose the development server port
-EXPOSE 3000
-
-# Use development mode by default
-CMD ["sh", "-c", "yarn dev"]
+# Use "serve" to serve the static file
+CMD ["serve", "-s", ".", "-l", "3000"]
